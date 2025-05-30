@@ -2,33 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mi Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página Principal - Mi CV</title>
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/script.js"></script>
 </head>
 <body>
   <header>
-    <nav class="menu">
+    <h1>Mi Currículum</h1>
+    <nav>
       <ul>
         <li><a href="informatica.html">Informática</a></li>
         <li><a href="electronica.html">Electrónica</a></li>
         <li><a href="electricidad.html">Electricidad</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-    <h1 class="titulo-principal">Bienvenido a mi portfolio profesional</h1>
   </header>
+
   <main>
-    <section class="presentacion" data-animacion>
-      <p>En esta página podrás ver mis conocimientos en distintas áreas técnicas.</p>
-    </section>
-    <section class="instrucciones" data-animacion>
-      <p>Haz clic en las secciones del menú para ver más detalles sobre cada área.</p>
+    <section id="contenido-principal">
+      <!-- Aquí se cargará el contenido de "principal.txt" -->
     </section>
   </main>
+
   <footer>
-    <p>© <span id="anio"></span>Pablo Capa Freire</p>
+    <p>© <span id="anio"></span> Pablo Capa Freire</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
