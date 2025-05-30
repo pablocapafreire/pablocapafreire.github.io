@@ -1,14 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background: #f5f5f5;
   color: #333;
+  line-height: 1.6;
 }
 
 header {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   color: white;
-  padding: 1rem;
+  padding: 1rem 0;
   text-align: center;
   position: sticky;
   top: 0;
@@ -18,9 +23,11 @@ header {
 .menu ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 0;
+  margin: 0;
 }
 
 .menu a {
@@ -34,10 +41,29 @@ header {
   color: #00d1b2;
 }
 
+.titulo-principal,
+.titulo-seccion {
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 main {
   padding: 2rem;
   max-width: 800px;
   margin: auto;
+}
+
+.contenido {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenido a {
+  color: #00a6c0;
+  text-decoration: underline;
 }
 
 [data-animacion] {
@@ -54,7 +80,24 @@ main {
 footer {
   text-align: center;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   color: white;
   margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  .menu ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .contenido {
+    padding: 1.2rem;
+  }
 }
