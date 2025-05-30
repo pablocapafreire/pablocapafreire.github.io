@@ -1,0 +1,6 @@
+Tengo conocimientos sólidos en informática, incluyendo:
+
+- Programación en Python, HTML, CSS, JavaScript y PHP
+- Administración de sistemas Linux y Windows
+- Redes informáticas: configuración de routers, switches, IPs
+- Desarrollo web completo y herramientas para análisis de seguridad básica
