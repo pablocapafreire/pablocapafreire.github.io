@@ -1,80 +1,94 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* style.css */
 
 body {
+  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background: #f4f4f4;
+  background-color: #f9f9f9;
   color: #333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  line-height: 1.6;
 }
 
 header {
-  background: #2c3e50;
-  color: white;
-  padding: 20px 10%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(5px);
 }
 
 header h1 {
-  margin-bottom: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  margin: 0;
+  font-size: 1.8rem;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 1rem;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
 }
 
 nav ul li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: 600;
   transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #18bc9c;
+  color: #1abc9c;
 }
 
 main {
-  flex-grow: 1;
-  padding: 30px 10%;
-  max-width: 900px;
+  padding: 2rem;
+  max-width: 1000px;
   margin: auto;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  border-radius: 6px;
 }
 
-/* Efecto suave al hacer scroll en secciones */
-section {
+section.bienvenida {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
 }
 
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.boton {
+  background-color: #1abc9c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #16a085;
+  transform: translateY(-3px);
 }
 
 footer {
-  background: #2c3e50;
-  color: white;
   text-align: center;
-  padding: 15px 10%;
-  font-size: 0.9rem;
-  user-select: none;
+  padding: 1rem;
+  background-color: #222;
+  color: #bbb;
+  margin-top: 3rem;
 }
