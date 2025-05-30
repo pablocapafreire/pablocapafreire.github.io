@@ -1,35 +1,51 @@
-// Función para cargar contenido desde un archivo txt y mostrarlo en un elemento
-async function cargarContenido(url, elementoId) {
+// Función para cargar texto desde archivo .txt y mostrarlo en el contenedor indicado
+async function cargarTexto(url, contenedorId) {
   try {
-    const respuesta = await fetch(url);
-    if (!respuesta.ok) throw new Error("No se pudo cargar el archivo");
-    const texto = await respuesta.text();
-    document.getElementById(elementoId).innerHTML = texto;
-    // Añadir clase para animación al cargar contenido
-    document.getElementById(elementoId).classList.add('visible');
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Error al cargar el archivo ' + url);
+    const texto = await response.text();
+    document.getElementById(contenedorId).innerHTML = texto.replace(/\n/g, '<br>');
   } catch (error) {
-    document.getElementById(elementoId).innerHTML = "Error al cargar el contenido.";
     console.error(error);
   }
 }
 
-// Detectar la página y cargar el contenido correspondiente
+// Función para efecto al hacer scroll: mostrar contenido con clase 'visible'
+function efectoScroll() {
+  const sections = document.querySelectorAll('section');
+  const triggerBottom = window.innerHeight * 0.85;
+
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+
+    if (sectionTop < triggerBottom) {
+      section.classList.add('visible');
+    }
+  });
+}
+
+// Actualiza el año del footer automáticamente
+function actualizarAnioFooter() {
+  const anioSpan = document.getElementById('anio');
+  if (anioSpan) {
+    anioSpan.textContent = new Date().getFullYear();
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  const path = window.location.pathname;
-  if (path.includes('index.html') || path === '/' || path === '') {
-    cargarContenido('textos/informatica.txt', 'contenido');
-  } else if (path.includes('electronica.html')) {
-    cargarContenido('textos/electronica.txt', 'contenido');
-  } else if (path.includes('electricidad.html')) {
-    cargarContenido('textos/electricidad.txt', 'contenido');
-  } else if (path.includes('contacto.html')) {
-    cargarContenido('textos/contacto.txt', 'contenido');
+  // Carga el texto según el id del contenedor (depende de la página)
+  if (document.getElementById('contenido-principal')) {
+    cargarTexto('txt/principal.txt', 'contenido-principal');
+  } else if (document.getElementById('contenido-informatica')) {
+    cargarTexto('txt/informatica.txt', 'contenido-informatica');
+  } else if (document.getElementById('contenido-electronica')) {
+    cargarTexto('txt/electronica.txt', 'contenido-electronica');
+  } else if (document.getElementById('contenido-electricidad')) {
+    cargarTexto('txt/electricidad.txt', 'contenido-electricidad');
   }
 
-  // Actualizar año del footer automáticamente
-  const year = new Date().getFullYear();
-  const footer = document.querySelector('footer p');
-  if (footer) {
-    footer.textContent = `© ${year} Mi Nombre`;
-  }
+  actualizarAnioFooter();
+  efectoScroll();
 });
+
+window.addEventListener('scroll', efectoScroll);
