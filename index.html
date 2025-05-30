@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Página Principal - Mi CV</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Mi Currículum</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1>Mi Currículum</h1>
+    <h1>Mi Página Profesional</h1>
     <nav>
       <ul>
+        <li><a href="index.html">Inicio</a></li>
         <li><a href="informatica.html">Informática</a></li>
         <li><a href="electronica.html">Electrónica</a></li>
         <li><a href="electricidad.html">Electricidad</a></li>
@@ -19,13 +20,19 @@
   </header>
 
   <main>
-    <section id="contenido-principal">
-      <!-- Aquí se cargará el contenido de "principal.txt" -->
+    <section class="bienvenida" id="contenido-principal">
+      <!-- Aquí se cargará el contenido desde txt/principal.txt -->
+    </section>
+
+    <section class="botones">
+      <a class="boton" href="informatica.html">Ver Informática</a>
+      <a class="boton" href="electronica.html">Ver Electrónica</a>
+      <a class="boton" href="electricidad.html">Ver Electricidad</a>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="anio"></span> Pablo Capa Freire</p>
+    <p>&copy; <span id="anio"></span> Pablo Capa Freire</p>
   </footer>
 
   <script src="js/script.js"></script>
