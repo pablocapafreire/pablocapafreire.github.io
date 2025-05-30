@@ -1,0 +1,6 @@
+Durante mis estudios me especialicé en electrónica:
+
+- Manejo de componentes electrónicos: resistencias, transistores, diodos, etc.
+- Diseño y montaje de circuitos en protoboard y PCB
+- Lectura de esquemas y uso de instrumentos de medida (multímetro, osciloscopio)
+- Microcontroladores (uso de Arduino y ESP8266)
