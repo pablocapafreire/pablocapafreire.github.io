@@ -35,13 +35,13 @@ function actualizarAnioFooter() {
 document.addEventListener('DOMContentLoaded', () => {
   // Carga el texto según el id del contenedor (depende de la página)
   if (document.getElementById('contenido-principal')) {
-    cargarTexto('txt/principal.txt', 'contenido-principal');
+    cargarTexto('textos/principal.txt', 'contenido-principal');
   } else if (document.getElementById('contenido-informatica')) {
-    cargarTexto('txt/informatica.txt', 'contenido-informatica');
+    cargarTexto('textos/informatica.txt', 'contenido-informatica');
   } else if (document.getElementById('contenido-electronica')) {
-    cargarTexto('txt/electronica.txt', 'contenido-electronica');
+    cargarTexto('textos/electronica.txt', 'contenido-electronica');
   } else if (document.getElementById('contenido-electricidad')) {
-    cargarTexto('txt/electricidad.txt', 'contenido-electricidad');
+    cargarTexto('textos/electricidad.txt', 'contenido-electricidad');
   }
 
   actualizarAnioFooter();
