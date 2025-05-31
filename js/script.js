@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("anio").textContent = anio;
 
   const ruta = window.location.pathname;
-  if (ruta.includes("informatica.html")) {
+    if (ruta.includes("index.html")) {
+    cargarContenido("contenido-principal", "textos/principal.txt");
+  } else if (ruta.includes("informatica.html")) {
     cargarContenido("contenido-informatica", "textos/informatica.txt");
   } else if (ruta.includes("electronica.html")) {
     cargarContenido("contenido-electronica", "textos/electronica.txt");
