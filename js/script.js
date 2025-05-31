@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const ruta = window.location.pathname;
   if (ruta.includes("informatica.html")) {
-    cargarContenido("contenido-informatica", "txt/informatica.txt");
+    cargarContenido("contenido-informatica", "textos/informatica.txt");
   } else if (ruta.includes("electronica.html")) {
-    cargarContenido("contenido-electronica", "txt/electronica.txt");
+    cargarContenido("contenido-electronica", "textos/electronica.txt");
   } else if (ruta.includes("electricidad.html")) {
-    cargarContenido("contenido-electricidad", "txt/electricidad.txt");
+    cargarContenido("contenido-electricidad", "textos/electricidad.txt");
   }
 });
