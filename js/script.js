@@ -13,19 +13,32 @@ function cargarContenido(id, archivo) {
     });
 }
 
-// Insertar año automáticamente en el footer
+// Insertar año automáticamente en el footer y cargar el texto correspondiente
 document.addEventListener("DOMContentLoaded", () => {
+  // Año automático
   const anio = new Date().getFullYear();
-  document.getElementById("anio").textContent = anio;
+  const spanAnio = document.getElementById("anio");
+  if (spanAnio) {
+    spanAnio.textContent = anio;
+  }
 
+  // Ruta actual del archivo cargado
   const ruta = window.location.pathname;
-    if (ruta.includes("index.html")) {
-    cargarContenido("contenido-principal", "textos/principal.txt");
-  } else if (ruta.includes("informatica.html")) {
-    cargarContenido("contenido-informatica", "textos/informatica.txt");
-  } else if (ruta.includes("electronica.html")) {
-    cargarContenido("contenido-electronica", "textos/electronica.txt");
-  } else if (ruta.includes("electricidad.html")) {
-    cargarContenido("contenido-electricidad", "textos/electricidad.txt");
+  const archivo = ruta.split("/").pop() || "index.html";
+
+  switch (archivo) {
+    case "index.html":
+    case "":
+      cargarContenido("contenido-principal", "textos/principal.txt");
+      break;
+    case "informatica.html":
+      cargarContenido("contenido-informatica", "textos/informatica.txt");
+      break;
+    case "electronica.html":
+      cargarContenido("contenido-electronica", "textos/electronica.txt");
+      break;
+    case "electricidad.html":
+      cargarContenido("contenido-electricidad", "textos/electricidad.txt");
+      break;
   }
 });
